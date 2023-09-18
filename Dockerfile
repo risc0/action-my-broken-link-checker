@@ -38,5 +38,5 @@ RUN set -eux && \
 
 COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT [ "/entrypoint.sh | grep -v 200" ]
 
