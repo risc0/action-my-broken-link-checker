@@ -100,7 +100,7 @@ IFS=' ' read -r -a CMD_PARAMS <<< "$CMD_PARAMS"
 if [ -z "${PAGES_PATH}" ] ; then
   # Run check
   print_info "[$(date +'%F %T')] Start checking: \"${URL}\""
-  muffet "${CMD_PARAMS[@]}" "${URL}"
+  muffet "${CMD_PARAMS[@]}" "${URL}" | grep -v 200
 
 else
 
@@ -131,7 +131,7 @@ else
 
   # Run check
   print_info "[$(date +'%F %T')] Start checking: \"${URL}\""
-  muffet "${CMD_PARAMS[@]}" "${URL}"
+  muffet "${CMD_PARAMS[@]}" "${URL}"  | grep -v 200
   cleanup
 
 fi
